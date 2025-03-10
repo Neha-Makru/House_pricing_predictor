@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-#defining the educational section function for the project here;
+
 
 def edu():
     st.write("*Here, we are going to look at a brief summary regarding what happens in the house price prediction Machine learning model*")
@@ -18,7 +18,6 @@ def data_gathering():
         st.write("In this step, relevant data about houses is collected. "
                  "This data can include information about the area, number of bedrooms, "
                  "bathrooms, square footage, location, etc.")
-        # Example plot for data distribution
         st.subheader("Data Distribution")
         data = [10, 15, 20, 25, 30, 35, 40]
         fig, ax = plt.subplots()
@@ -30,7 +29,6 @@ def data_preprocessing():
         st.write("Data preprocessing involves cleaning and preparing the collected data "
                  "for analysis. This includes handling missing values, removing duplicates, "
                  "and transforming data into a suitable format.")
-        # Example plot for handling missing values
         st.subheader("Handling Missing Values")
         data = {'A': [1, 2, None, 4, 5], 'B': [None, 2, 3, 4, 5]}
         df = pd.DataFrame(data)
@@ -43,7 +41,6 @@ def feature_engineering():
         st.write("Feature engineering involves creating new features or transforming existing ones "
                  "to improve the performance of the machine learning model. This can include feature scaling, "
                  "encoding categorical variables, or creating interaction terms.")
-         # Example plot for feature importance
         st.subheader("Feature Importance")
         features = ['Area', 'Bedrooms', 'Bathrooms', 'Location']
         importance = [0.5, 0.3, 0.2, 0.1]
@@ -60,7 +57,7 @@ def model_building():
         st.write("In this step, a machine learning model is trained on the preprocessed data. "
                  "Common algorithms used for house price prediction include linear regression, "
                  "decision trees, random forests, and gradient boosting.")
-        # Example plot for model performance
+        
         st.subheader("Model Performance")
         models = ['Linear Regression', 'Decision Trees', 'Random Forests', 'Gradient Boosting']
         accuracy = [0.75, 0.80, 0.85, 0.90]
@@ -76,7 +73,7 @@ def model_evaluation():
         st.write("Once the model is trained, it is evaluated using metrics such as mean squared error (MSE), "
                  "R-squared score, or mean absolute error (MAE). This step helps assess the performance "
                  "of the model and identify areas for improvement.")
-        # Example plot for model evaluation
+    
         st.subheader("Model Evaluation")
         metrics = ['MSE', 'R-squared', 'MAE']
         values = [10, 0.85, 5]
@@ -89,4 +86,3 @@ def model_evaluation():
         
         st.write("""*In conclusion, the processes involved in the process of house price 
                  prediction are illustrated in the diagram given below*""")
-        # st.image("conclusive.jpg", caption="The processes", use_column_width=True)
