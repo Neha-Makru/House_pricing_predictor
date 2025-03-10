@@ -61,13 +61,11 @@ def quiz():
         question = question_data["question"]
         options = question_data["options"]
 
-        # Use a unique key for each question
         user_answer = st.radio(f"Question {i+1}: {question}", options, key=f"question_{i+1}")
 
-        # Store users answer
         user_answers[f"user_answer_{i+1}"] = user_answer
 
-    # Answer handling
+    
     if st.button("Check Answers"):
         correct_answers = {f"user_answer_{i+1}": question_data["correct_answer"] for i, question_data in enumerate(questions)}
         for key, user_answer in user_answers.items():
