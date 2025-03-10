@@ -1,4 +1,3 @@
-# Importing the necessary libraries 
 import streamlit as st
 import pandas as pd
 from streamlit_option_menu import option_menu
@@ -10,9 +9,7 @@ from Educational import edu, data_gathering, data_preprocessing, feature_enginee
 
 house_price_data = pd.read_csv("pune.csv")
 
-# Defining the main prediction page function layout here: 
 def predict():
-    # User inputs
     location = st.selectbox("Select the Location please", locations)
     bhk = st.text_input("Enter BHK in numbers", "")
     sqft = st.text_input("Enter total house area in sqft", "")
@@ -21,17 +18,14 @@ def predict():
     area_type = st.selectbox('Area Type', ['Built-up  Area', 'Super built-up  Area'])
     availability = st.selectbox('Availability', ['Ready To Move', 'Not Ready'])
 
-    # Prediction
     if st.button('Predict Price'):
         result = prediction(location, bhk, bath, balcony, sqft, area_type, availability)
         st.success(f'The estimated price for the property is Rs. {result:.2f} Lakhs.')
     else:
         st.warning("Please fill in all the input fields.")
     
-# Streamlit app
 def main():
     
-    # Creating the navigation bar
     page = st.sidebar.radio("Navigation, Go to :compass:", ["Predict my price", "Educational", 
                                            "Visualization","Quiz Mania","FAQ"], 
                              format_func=lambda x: f"{x} {':house_with_garden:' if x == 'Predict my price' else ''}"
@@ -45,7 +39,6 @@ def main():
             ''')
     st.markdown("---")
     
-    # To Display the page selected by the user
     if page=="Educational":
         edu()
         data_gathering()
