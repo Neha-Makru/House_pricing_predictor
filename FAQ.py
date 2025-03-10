@@ -1,6 +1,5 @@
 import streamlit as st 
 
-# defining the FAQ page layout and information here. 
 def faq_page():
     st.title("FAQ Page")
     st.write("*Welcome to the FAQ Page!*")
